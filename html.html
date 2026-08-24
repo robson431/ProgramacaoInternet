@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linguagem HTML</title>
     <style>
-        h1{color:white}
+        h1{color:rgb(165, 51, 51)}
         span{font-size: 5em;}
 
 
@@ -24,8 +24,9 @@
             background-color: rgb(100, 0, 0);
             background-color: #88AABB;
         }
-        table, td{border: 1px solid black;
+        table#sepei, #sepei td,  #sepei caption, #sepei th{border: 1px solid black;
         border-collapse: collapse;
+        background-color: #88AABB;
         }
     </style>
 </head>
@@ -104,7 +105,63 @@
                     <td>90,00</td>
                 </tr>
         </table>
+
+        <table id = "sepei"> 
+            <caption>NADA</caption>
+            <tr><td>indide</td><td>nome</td><td>idade</td></tr>
+            <tr><td>1</td><td>nada</td><td>13</td></tr>
+            <tr><td colspan="2">Total nadas</td><td>2</td></tr>
+
+
+
+        </table>
     </section>
+
+    <section>
+
+        <h1>Formulario</h1>
+        
+        <p>As tags de formulario permitm entrada de dados</p>
+    <form action="">
+        <label for="inputNome">Nome:</label>
+        <input id ="inputNome" type="text">
+        
+        <label for="inputTel">Telefone:</label>
+        <input id ="inputTel" type="tel" pattern="^\(\d{2}\)\s\d{4,5}-\d{4}$">
+
+        <input type="submit" values="Enviar">
+    
+    </form>
+    
+    <form action="https://google.com/search" method="get">
+        <label for="url">URL</label>
+        <input type="text" name="q">
+        <input type="text" name="bla">
+        <input type="submit">
+
+    </form>
+
+
+    <form method="post">
+
+
+         <label for="usr">Usuario</label>
+         <input id="usr" type="text" name="Usuario">
+
+        <label for="senha">Senha</label>
+         <input id="senha" type="password" name="senha">
+
+         <input type="submit">
+    </form>
+    
+
+   
+    
+    
+    
+    </section>
+
+
 
 
 </body>
