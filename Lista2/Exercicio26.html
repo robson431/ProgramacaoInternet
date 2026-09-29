@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+.nuvens{
+    display: flex;
+    animation: andar 3s ease-in-out infinite;
+}
+
+   .agua {
+    margin-top: -200px;
+    background-color: blue;
+    width: 2000px;
+    height: 500px;  
+}
+
+.agua::before{
+    display: block;
+    content: "";
+    background-color:blue;
+    width: 2000px;
+    height: 500px;
+}
+
+.agua::after{
+    display: block;
+    content: "";
+    background-color: red;
+    width: 2200;
+    height: 500px;
+}
+
+.barco {
+    position: relative;
+    top: -70px;
+    font-size: 100px;
+    animation: mexer 10s ease-in-out infinite;
+
+}
+@keyframes mexer {
+    0% {
+        transform: translateX(200px) dtranslateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateX(200px) translateY(-1px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateX(200px)translateY(0px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateX(200px)translateY(1px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translateX(400px) translateY(0px) rotate(0deg);
+    }
+
+}
+
+@keyframes andar {
+    
+0% {
+transform: translateX(0px) translateY(0px) rotate(0deg);
+}
+25% {
+transform: translateX(50px) translateY(50px) rotate(2deg);
+}
+50% {
+transform: translateX(70px) translateY(90px) rotate(0px);
+}
+75% {
+transform: translateX(90px) translateY(-120px) rotate(-2deg);
+}
+100% {
+transform: translateX(110px) translateY(150px) rotate(0deg);
+}
+
+}
+
+.nuvem1 {
+    font-size: 150px;
+    position: relative;
+    left: 300px;
+    top: -100px;
+}
+
+.nuvem2{
+    font-size: 150px;
+    position: relative;
+    left: 1000px;
+    top: -100px;
+}
+
+</style>
+<body>
+
+    <div class="nuvens">
+    <p class="nuvem1">☁️</p>
+    <P class="nuvem2">☁️</P>
+    </div>
+
+
+<p class="barco">⛵</p>
+
+<div class="agua">
+
+
+</div>
+
+
+
+</body>
+</html>
