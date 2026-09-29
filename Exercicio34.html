@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout das fotos</title>
+    <style>
+        
+        
+        .info h3 {
+            margin: 0 0 4px 0;
+            font-size: 16px;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 24px;
+        }
+
+        .rec {
+            position: relative;
+            width: 75px;        
+            height: 420px;      
+            border-radius: 35px; 
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .rec img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+
+        
+       
+
+        .ativo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .icon{
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
+        
+        .info {
+            position: absolute;
+            bottom: 20px;
+            left: 70px;
+            color: #ffffff;
+        }
+         .ativo{
+            position: relative;
+            width: 380px;    
+            height: 420px;      
+            border-radius: 35px; 
+            overflow: hidden;
+        }
+
+
+
+
+        .info p {
+            margin: 0;
+            font-size: 12px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    
+        <div class="rec">
+            <img src="../imagens/gabigol.jpg" alt="Onça">
+            
+        </div>
+
+        
+        <div class="ativo">
+            <img src=../imagens/hTTP.png
+                
+            </div>
+        </div>
+
+        <div class="rec">
+            <img src=../imagens/Froggy.jpg alt="Tucano">
+        </div>
+
+        <div class="rec">
+            <img src=../imagens/Web.png alt="Esquilo da terra">
+        </div>
+
+        <div class="rec">
+            <img src=../imagens/gustavo.jpg alt="Arara">
+        </div>
+    </div>
+
+</body>
+</html>
