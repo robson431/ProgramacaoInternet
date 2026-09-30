@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+
+    <style>
+
+
+        .container {
+            display: grid;
+            grid-template-columns: 150px 1fr 150px;
+            grid-template-rows: 60px 40px 1fr 40px 40px;
+            gap: 5px;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #f2b600;
+            grid-column: 1 / 4;
+            grid-row: 1;
+        }
+
+        .banner {
+            background-color: #df3b32;
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .left {
+            background-color: #0b9b5b;
+            grid-column: 1;
+            grid-row: 2 / 5;
+        }
+
+        .main {
+            background-color: #4385e5;
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        .right {
+            background-color: #f2b600;
+            grid-column: 3;
+            grid-row: 2 / 5;
+        }
+
+        .low {
+            background-color: #0b9b5b;
+            grid-column: 2;
+            grid-row: 4;
+        }
+
+        .footer {
+            background-color: #4385e5;
+            grid-column: 1 / 4;
+            grid-row: 5;
+        }
+
+        @media screen and  (max-width: 600px){
+        .container {
+            display: flex;
+           flex-direction: row;
+        }
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+    <div class="header">Header</div>
+    <div class="banner">Banner</div>
+    <div class="left">Left Aside</div>
+    <div class="main">Main Content</div>
+    <div class="right">Right Aside</div>
+    <div class="low">Low Content</div>
+    <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>
