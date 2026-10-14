@@ -19,10 +19,10 @@ if(nome == "Robson"){
 //console.log("nome: " + nome + " Sobrenome: " + sobrenome + " idade: " + idade + " pet: " + pet)
 let idade = 20;
 
-if(idade == "20"){
+if(idade == "20"){ //Compara se o valor da variável é igual 
     console.log("A")
 }
-if(idade === "20"){
+if(idade === "20"){ //Compara o valor e o tipo da variavel 
     console.log("B")
 }
 
@@ -76,5 +76,44 @@ let carnes = ["picanha", "costela", "alcatra", "fraldinha"];
 carnes.forEach( (v1, index) =>{
     console.log(v1 + "index:" + index);
 })
+
+
+
+var ItemChurrasco = [];
+ItemChurrasco.push("Costela")
+ItemChurrasco.push("Costela")
+ItemChurrasco.push("Picanha")
+
+
+
+for(let i = 0; i<ItemChurrasco.length-1; i++){
+}
+
+ItemChurrasco.forEach((e, i) =>{
+    console.log(i+"-"+e);
+})
+
+nomev= "Joao Henrique Marcelo Boss"
+console.log(nomev.split("").reverse().join(""));
+
+//Funcao com array
+//reverse, join, map
+
+ItemChurrasco.map((e)=> {
+    console.log(e.length);
+})
+//filter
+console.log (ItemChurrasco.filter( (e, i) => {return i == 2}));
+console.log (ItemChurrasco.filter( (e, i) => {
+
+    return !e.split("").includes("P");
+
+
+
+}));
+
+
+
+
 
 
