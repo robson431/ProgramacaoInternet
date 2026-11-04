@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head id="cabecalho">
+    <meta charset="UTF-8" id="codificacao">
+    <title id="titulo">Tipos de variáveis</title>
+</head>
+
+<body id="corpo">
+
+    <h1 id="titulo-principal">Tipos de variáveis em JavaScript</h1>
+
+    <button id="botao" onclick="executar()">Executar</button>
+
+    <h2 id="titulo-tipos">Tipos de variáveis</h2>
+
+    <p id="pstring"></p>
+    <p id="pnumero"></p>
+    <p id="pboolean"></p>
+    <p id="pundefined"></p>
+    <p id="pnull"></p>
+    <p id="pobject"></p>
+    <p id="parray"></p>
+
+    <h2 id="titulo-operacoes">Operações</h2>
+
+    <p id="operacao1"></p>
+    <p id="operacao2"></p>
+    <p id="operacao3"></p>
+    <p id="operacao4"></p>
+
+    <script id="codigo">
+        function executar() {
+
+            let texto = "Olá";
+            let numero = 10;
+            let booleano = true;
+            let indefinido;
+            let nulo = null;
+            let objeto = { nome: "João" };
+            let array = [1, 2, 3];
+
+            document.getElementById("pstring").innerText = "String: " + typeof texto;
+            document.getElementById("pnumero").innerText = "Number: " + typeof numero;
+            document.getElementById("pboolean").innerText = "Boolean: " + typeof booleano;
+            document.getElementById("pundefined").innerText = "Undefined: " + typeof indefinido;
+            document.getElementById("pnull").innerText = "Null: " + typeof nulo;
+            document.getElementById("pobject").innerText = "Object: " + typeof objeto;
+            document.getElementById("parray").innerText = "Array: " + typeof array;
+
+            let resultado1 = texto + numero;
+            let resultado2 = booleano * numero;
+            let resultado3 = "5" - 2;
+            let resultado4 = numero + booleano;
+
+            
+            document.getElementById("operacao1").innerText = "Olá + 10 = " + resultado1 + " (Junta texto e número.)";
+            document.getElementById("operacao2").innerText = "true * 10 = " + resultado2 + " (True vale 1.)";
+            document.getElementById("operacao3").innerText = "'5' - 2 = " + resultado3 + " (Converte texto em número.)";
+            document.getElementById("operacao4").innerText = "10 + true = " + resultado4 + " (True vale 1.)";
+        }
+    </script>
+
+</body>
+</html>
