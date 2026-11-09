@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Calculadora de IMC</h1>
+
+    <p>Nome:</p>
+    <input type="text" id="idNome">
+
+    <p>Peso (kg):</p>
+    <input type="text" id="idPeso">
+
+    <p>Altura (m):</p>
+    <input type="text" id="idAltura">
+
+    <br><br>
+    <button id="botao">Calcular</button>
+
+    <p id="resultado"></p>
+    <img id="imagemImc" width="200" style="display: none;">
+
+    <script>
+        const botao = document.getElementById("botao");
+
+        botao.addEventListener("click", function () {
+            const nome = document.getElementById("idNome").value;
+            const peso = parseFloat(document.getElementById("idPeso").value.replace(",", "."));
+            const altura = parseFloat(document.getElementById("idAltura").value.replace(",", "."));
+            const resultado = document.getElementById("resultado");
+            const imagem = document.getElementById("imagemImc");
+
+            if (nome == "" || isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+                resultado.textContent = "Preencha nome, peso e altura com valores válidos.";
+                imagem.style.display = "none";
+                return;
+            }
+
+            const imc = peso / (altura * altura);
+
+            let classificacao;
+
+            if (imc < 18.5) {
+                classificacao = "Abaixo do peso";
+            } else if (imc < 25) {
+                classificacao = "Peso normal";
+            } else if (imc < 30) {
+                classificacao = "Sobrepeso";
+            } else if (imc < 35) {
+                classificacao = "Obesidade grau I";
+            } else if (imc < 40) {
+                classificacao = "Obesidade grau II";
+            } else {
+                classificacao = "Obesidade grau III";
+            }
+
+            resultado.textContent = nome + ", seu IMC é " + imc.toFixed(2) + " (" + classificacao + ")";
+
+            const faixa = Math.floor(imc);
+            let arquivo;
+
+            switch (true) {
+                case faixa < 18:
+                    arquivo = "abaixopeso.png";
+                    break;
+                case faixa < 25:
+                    arquivo = "normal.png";
+                    break;
+                case faixa < 30:
+                    arquivo = "sobrepeso.png";
+                    break;
+                case faixa < 35:
+                    arquivo = "obesidade1.png";
+                    break;
+                case faixa < 40:
+                    arquivo = "obesidade2.png";
+                    break;
+                default:
+                    arquivo = "obesidade3.png";
+            }
+
+            imagem.src = "Imagens/" + arquivo;
+            imagem.style.display = "block";
+        });
+    </script>
+
+</body>
+</html>

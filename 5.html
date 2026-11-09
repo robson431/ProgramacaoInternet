@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorteio</title>
+</head>
+<body>
+
+    <h1>Sorteio de Números</h1>
+
+    <p>Mínimo:</p>
+    <input type="text" id="minimo" value="1">
+
+    <p>Máximo:</p>
+    <input type="text" id="maximo" value="100">
+
+    <br><br>
+    <button id="botao">Sortear</button>
+
+    <p id="resultado"></p>
+
+    <ul id="lista"></ul>
+
+    <script>
+        let sorteados = [];
+
+        function sortear() {
+            let min = parseInt(document.getElementById("minimo").value);
+            let max = parseInt(document.getElementById("maximo").value);
+
+            let numero = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            document.getElementById("resultado").textContent = "Número sorteado: " + numero;
+
+            let achou = false;
+
+            for (let i = 0; i < sorteados.length; i++) {
+                if (sorteados[i].numero == numero) {
+                    sorteados[i].vezes++;
+                    achou = true;
+                }
+            }
+
+            if (achou == false) {
+                sorteados.push({ numero: numero, vezes: 1 });
+            }
+
+            let lista = document.getElementById("lista");
+            lista.innerHTML = "";
+
+            for (let i = 0; i < sorteados.length; i++) {
+                if (sorteados[i].vezes > 1) {
+                    lista.innerHTML += "<li>" + sorteados[i].numero + " (sorteado " + sorteados[i].vezes + " vezes)</li>";
+                } else {
+                    lista.innerHTML += "<li>" + sorteados[i].numero + "</li>";
+                }
+            }
+        }
+
+        document.getElementById("botao").addEventListener("click", sortear);
+    </script>
+
+</body>
+</html>
