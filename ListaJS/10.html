@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        button {
+            width: 60px;
+            height: 40px;
+        }
+        #igual {
+            height: 170px;
+        }
+        #visor {
+            width: 250px;
+            height: 40px;
+            font-size: 25px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="visor" value="0" readonly>
+
+    <table>
+        <tr>
+            <td><button onclick="operacao('+')">+</button></td>
+            <td><button onclick="operacao('-')">-</button></td>
+            <td><button onclick="operacao('*')">×</button></td>
+            <td><button onclick="operacao('/')">÷</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="numero('7')">7</button></td>
+            <td><button onclick="numero('8')">8</button></td>
+            <td><button onclick="numero('9')">9</button></td>
+            <td rowspan="4"><button id="igual" onclick="calcular()">=</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="numero('4')">4</button></td>
+            <td><button onclick="numero('5')">5</button></td>
+            <td><button onclick="numero('6')">6</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="numero('1')">1</button></td>
+            <td><button onclick="numero('2')">2</button></td>
+            <td><button onclick="numero('3')">3</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="numero('0')">0</button></td>
+            <td><button onclick="numero('.')">.</button></td>
+            <td><button onclick="limpar()">AC</button></td>
+        </tr>
+    </table>
+
+    <script>
+        let visor = document.getElementById("visor");
+        let primeiro = 0;
+        let sinal = "";
+
+        
+         function numero(n) {
+            if (visor.value == "0") {
+                visor.value = n;
+            } else {
+                visor.value = visor.value + n;
+            }
+        }
+
+        function operacao(s) {
+            primeiro = Number(visor.value);
+            sinal = s;
+            visor.value = "0";
+        }
+            function calcular() {
+            let segundo = Number(visor.value);
+            let resultado = 0;
+
+            if (sinal == "+") {
+                resultado = primeiro + segundo;
+            } else if (sinal == "-") {
+                resultado = primeiro - segundo;
+            } else if (sinal == "*") {
+                resultado = primeiro * segundo;
+            } else if (sinal == "/") {
+                resultado = primeiro / segundo;
+            }
+
+            visor.value = resultado;
+        }
+
+        function limpar() {
+            visor.value = "0";
+            primeiro = 0;
+            sinal = "";
+        }
+    </script>
+
+</body>
+</html>

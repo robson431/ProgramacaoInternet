@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        div {
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="d1" style="background-color: #05668D;"></div>
+    <div id="d2" style="background-color: #427AA1;"></div>
+    <div id="d3" style="background-color: #EBF2FA;"></div>
+    <div id="d4" style="background-color: #679436;"></div>
+    <div id="d5" style="background-color: #A5BE00;"></div>
+
+    <script>
+        let cores = ["#05668D", "#427AA1", "#EBF2FA", "#679436", "#A5BE00"];
+
+        document.addEventListener("keydown", function(e) {
+            if (e.code == "Space") {
+                for (let i = 1; i <= 5; i++) {
+                    let n = Math.floor(Math.random() * 5);
+                    document.getElementById("d" + i).style.backgroundColor = cores[n];
+                }
+            }
+        });
+    </script>
+
+<!--Essa questao eu pesquisei no claude, pois nao sabia como fazer clicar uma tecla e funcionar algo no programa-->
+
+</body>
+</html>

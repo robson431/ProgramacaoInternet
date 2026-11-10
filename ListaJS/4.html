@@ -36,9 +36,10 @@
 
             if (nome == "" || isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
                 resultado.textContent = "Preencha nome, peso e altura com valores válidos.";
-                imagem.style.display = "none";
                 return;
             }
+
+            <!--Copiei essa parte da que a gente fez em sala-->
 
             const imc = peso / (altura * altura);
 

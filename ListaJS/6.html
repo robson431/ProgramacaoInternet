@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Primos</title>
+    <title>Document</title>
 </head>
 <body>
 
@@ -10,7 +10,7 @@
     <input type="number" id="fim">
     <button onclick="verificar()">Verificar</button>
 
-    <div id="resultadoPrimos"></div>
+    <div id="Primos"></div>
 
     <script>
         function ehPrimo(n) {
@@ -28,7 +28,7 @@
         function verificar() {
             let inicio = parseInt(document.getElementById("inicio").value);
             let fim = parseInt(document.getElementById("fim").value);
-            let resultado = document.getElementById("resultadoPrimos");
+            let resultado = document.getElementById("Primos");
 
             if (isNaN(inicio) || isNaN(fim)) {
                 resultado.textContent = "Preencha os dois campos.";
