@@ -13,15 +13,12 @@
 
 </form>
     
-
-
-
 <?php
 $numero=$_GET['numero'];    
 
 
-function ePar($n){
-if($n % 2 == 0){
+function ePar($numero){
+if($numero % 2 == 0){
     echo "é par";
 
 }else{
